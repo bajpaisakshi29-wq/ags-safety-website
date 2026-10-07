@@ -2645,6 +2645,16 @@
     .footer-top { grid-template-columns: 1fr; gap: 28px; }
   }
 
+
+  /* Tightly framed product photographs: show the whole shoe at every size. */
+  .product-photo,
+  .product-modal-media,
+  .related-card .related-photo { aspect-ratio: 4 / 3; }
+  .product-photo img,
+  .product-modal-zoom img,
+  .related-card .related-photo img,
+  .solar-planet img { object-fit: contain; }
+
 </style>
 
 <!-- Google Analytics (GA4): replace G-XXXXXXXXXX below with your real
