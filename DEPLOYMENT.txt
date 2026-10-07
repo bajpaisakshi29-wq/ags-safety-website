@@ -1,0 +1,80 @@
+AGS SAFETY — NETLIFY DEPLOYMENT
+
+This package is prepared for Netlify hosting. The page currently uses sicura.in
+in its canonical URL and social metadata. If you intend to use another domain,
+update those URLs in index.html before connecting it.
+
+1. EXTRACT AND DEPLOY
+Sign into your own Netlify account at https://app.netlify.com/.
+Extract this ZIP. Open https://app.netlify.com/drop and drag in the extracted
+folder containing index.html and assets. Upload the whole folder, not just
+index.html. Netlify will give you a temporary address ending in .netlify.app.
+No build command is needed for this static website.
+
+2. ENABLE THE THREE FORMS
+In the project's Netlify dashboard, open Forms and enable form detection.
+Then open Deploys and upload the same website folder again. Detection takes
+effect on the next deploy. Confirm these three forms appear:
+  oem-enquiry
+  capability-overview
+  sample-request
+
+3. SET EMAIL NOTIFICATIONS
+Open Forms > Submission notifications > Add notification and choose email.
+Enter an inbox that your team monitors, for example sales@sicura.in if active.
+Make sure the notification covers all three forms, or add one for each form.
+This sends incoming requests to your team. It does not automatically email
+catalogues or capability documents to customers; the team must reply.
+
+4. TEST BEFORE CONNECTING YOUR DOMAIN
+On the temporary .netlify.app address, submit one request through each form.
+Check that each submission appears in the Netlify Forms dashboard and that
+notification emails arrive. A local preview cannot test Netlify processing.
+Also check the hero video, product images, catalogue download and WhatsApp link
+on a phone and desktop. Do not switch the domain until these checks pass.
+
+5. ADD THE DOMAIN IN NETLIFY
+Open Domain management > Production domains and add the domain you actually
+own. If it is sicura.in, add sicura.in and confirm www.sicura.in is included.
+With GoDaddy DNS, choose www.sicura.in as the primary domain.
+Select Pending DNS verification to get the records for your particular site.
+
+6. UPDATE WEBSITE DNS AT GODADDY
+In GoDaddy, select that domain > Manage DNS. Save a screenshot of the current
+records before editing. Use the values shown by Netlify, which take precedence
+over any generic example below.
+For a standard Netlify site using GoDaddy DNS, the usual records are:
+  Type A      Name @     Value 75.2.60.5
+  Type CNAME  Name www   Value your-actual-project.netlify.app
+Replace 'your-actual-project' with the real Netlify project address, without
+https:// or a trailing slash. Replace conflicting website records for @ and
+www rather than leaving records pointing to different hosts.
+Keep email records, including MX, SPF, DKIM and DMARC. Keep GoDaddy nameservers
+for this method. Changing website records switches traffic from an existing
+website to this one once the DNS update takes effect.
+
+7. VERIFY HTTPS
+Return to Netlify and verify DNS. Check the HTTPS/SSL section and confirm the
+certificate is active. DNS changes can take several hours. Test both the root
+domain and www address, then test all three forms again on the final domain.
+
+FIXES IN THIS PACKAGE
+- All three simulated submissions replaced with Netlify Forms POST requests.
+- Success messages appear only after an accepted HTTP response.
+- Failed requests keep entered details and allow retry.
+- Duplicate requests are blocked while a submission is pending.
+- A spam honeypot is included for each form.
+- Overview copy describes a request for a team reply, not an automated email.
+- Missing hero poster, favicons and Apple touch icon restored from existing assets.
+- Existing design, product assets, videos and catalogue retained.
+
+VERIFICATION
+Local asset references and JavaScript syntax checked. Submission logic tested
+with controlled success/failure responses, input retention and duplicate
+blocking. Actual Netlify receipt, notifications and domain HTTPS still require
+the deployment checks above; they cannot be verified inside a local ZIP.
+
+OFFICIAL GUIDES
+https://docs.netlify.com/start/quickstarts/netlify-drop-quickstart/
+https://docs.netlify.com/manage/forms/setup/
+https://docs.netlify.com/manage/domains/configure-domains/configure-external-dns/
