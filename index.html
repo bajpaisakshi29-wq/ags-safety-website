@@ -13,8 +13,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-<title>AGS Safety — SICURA Safety & Military Footwear, Kanpur</title>
-<meta name="description" content="AGS Safety manufactures SICURA safety and military footwear in Kanpur, India — 20+ years, in-house R&D to shipping, exporting to three continents." />
+<title>SICURA — Safety & Military Footwear by AGS Safety, Kanpur</title>
+<meta name="description" content="SICURA is the safety and military footwear brand of AGS Safety Equipments, Kanpur. AGS Safety manufactures SICURA safety and military footwear in Kanpur, India — 20+ years, in-house R&D to shipping, exporting to three continents." />
 <link rel="canonical" href="https://www.sicura.in/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="AGS Safety / SICURA" />
@@ -31,22 +31,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AGS Safety Equipments",
-  "alternateName": "SICURA",
-  "url": "https://www.sicura.in/",
-  "logo": "https://www.sicura.in/apple-touch-icon.png",
-  "email": "sales@sicura.in",
-  "telephone": "+91-75720-31111",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "117/K/16, R.S. Puram, Sarvodaya Nagar",
-    "addressLocality": "Kanpur",
-    "postalCode": "208025",
-    "addressCountry": "IN"
-  },
-  "sameAs": [
-    "https://instagram.com/ags_safety"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.sicura.in/#website",
+      "url": "https://www.sicura.in/",
+      "name": "SICURA",
+      "alternateName": ["SICURA by AGS Safety", "AGS Safety Equipments"],
+      "publisher": { "@id": "https://www.sicura.in/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.sicura.in/#org",
+      "name": "AGS Safety Equipments",
+      "alternateName": "SICURA",
+      "url": "https://www.sicura.in/",
+      "logo": "https://www.sicura.in/apple-touch-icon.png",
+      "image": "https://www.sicura.in/assets/sicura-logo.jpg",
+      "brand": { "@type": "Brand", "name": "SICURA", "logo": "https://www.sicura.in/assets/sicura-logo.jpg" },
+      "email": "sales@sicura.in",
+      "telephone": "+91-75720-31111",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+91-98891-81111",
+        "email": "sales@sicura.in",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English", "Hindi"]
+      }],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "117/K/16, R.S. Puram, Sarvodaya Nagar",
+        "addressLocality": "Kanpur",
+        "postalCode": "208025",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://instagram.com/ags_safety"
+      ]
+    }
   ]
 }
 </script>
