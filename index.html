@@ -2662,6 +2662,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .related-card .related-photo img,
   .solar-planet img { object-fit: contain; }
 
+  /* Mobile hero: stack blocks at fixed offsets so they cannot overlap */
+  @media (max-width: 640px) {
+    .dock-wrap { top: 12px; right: 12px; }
+    .dock-item { width: 30px; height: 30px; }
+    .brand { top: 64px; }
+    .sicura-badge { top: 112px; }
+    .hero-quicklinks {
+      top: 214px; left: 6%; right: 6%;
+      flex-direction: row; flex-wrap: wrap; gap: 6px;
+    }
+    .hero-cta { top: 284px; }
+    .headline { bottom: 84px; max-width: 88%; }
+    .hero-secondary { bottom: 40px; }
+  }
 </style>
 
 
