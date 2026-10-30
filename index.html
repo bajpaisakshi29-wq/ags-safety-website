@@ -77,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ags-orange: #DA3A16;
+    --ags-orange: #FFD400;
     --ags-black: #060606;
     --ags-safety-yellow: #FFD400;
   }
@@ -1376,7 +1376,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     opacity: 0;
     transition: opacity 0.35s ease;
     background: radial-gradient(160px circle at var(--sx, 50%) var(--sy, 50%),
-                rgba(255, 212, 0, 0.32), rgba(218, 58, 22, 0.18) 45%, transparent 72%);
+                rgba(255, 212, 0, 0.32), rgba(255, 212, 0, 0.18) 45%, transparent 72%);
     mix-blend-mode: screen;
   }
   .product-photo.spotlight-active .spotlight-glow { opacity: 1; }
@@ -1600,8 +1600,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      "alive" without competing with the BorderTrail already circling the
      main photo. */
   @keyframes shield-pulse {
-    0%, 100% { box-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 0 rgba(218,58,22,0); }
-    50%      { box-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 22px rgba(218,58,22,0.35); }
+    0%, 100% { box-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 0 rgba(255,212,0,0); }
+    50%      { box-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 22px rgba(255,212,0,0.35); }
   }
   @media (prefers-reduced-motion: reduce) {
     .about-inset { animation: none; }
@@ -1977,7 +1977,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ags-orange);
-    border: 1px solid rgba(218,58,22,0.5);
+    border: 1px solid rgba(255,212,0,0.5);
     border-radius: 100px;
     padding: 2px 8px;
     margin-bottom: 8px;
@@ -2705,9 +2705,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <link rel="stylesheet" href="assets/engineering.css?v=glass-hd1">
+<link rel="stylesheet" href="assets/refinement.css?v=1">
 </head>
 
-<body>
+<body><script>document.documentElement.classList.add("refinement-js");</script>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVL8Z5LT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -2766,7 +2767,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <a href="#" class="hero-cta shine-cta" data-goto-view="products">
-    <span>Shop Now</span>
+    <span>Explore Footwear</span>
     <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
   </a>
   <button type="button" class="hero-secondary" id="heroSampleTrigger">Request a Sample →</button>
@@ -2871,7 +2872,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="products-head">
       <div class="cap-eyebrow">Products</div>
       <h2>Built to Spec. Ready to Ship.</h2>
-      <p class="cap-lede">A working slice of the SICURA range — safety and military footwear manufactured in Kanpur, in the styles OEM partners order most. Pricing is on request, quoted per order.</p>
+      <p class="cap-lede">Safety and military footwear, manufactured in Kanpur. Explore the range by style or application, then request specifications, samples or a bulk quote.</p>
       <button type="button" class="size-guide-trigger" id="sizeGuideTrigger">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h18v8H3z"/><path d="M7 8v3M11 8v3M15 8v3M19 8v3"/></svg>
         Size Guide
@@ -2924,48 +2925,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <img src="assets/ags-shield.png" alt="AGS Safety shield emblem" loading="lazy">
           </div>
         <div class="solar-orbit" style="--r:55px; --a:-90deg;">
-          <div class="solar-planet" style="--color:#DA3A16" data-goto-filter="chelsea">
+          <button type="button" class="solar-planet" style="--color:#DA3A16" data-goto-filter="chelsea">
             <img src="assets/products/chelsea-black.jpg" alt="Black Chelsea safety boot" loading="lazy"><span>Chelsea Boots</span>
-          </div>
+          </button>
         </div>
         <div class="solar-orbit" style="--r:95px; --a:40deg;">
-          <div class="solar-planet" style="--color:#e7e7e7" data-goto-filter="lace">
+          <button type="button" class="solar-planet" style="--color:#e7e7e7" data-goto-filter="lace">
             <img src="assets/products/lace-black-orange.jpg" alt="Black lace-up safety shoe with orange accents" loading="lazy"><span>Lace-Up Shoes</span>
-          </div>
+          </button>
         </div>
         <div class="solar-orbit" style="--r:135px; --a:160deg;">
-          <div class="solar-planet" style="--color:#FFD400" data-goto-filter="boot">
+          <button type="button" class="solar-planet" style="--color:#FFD400" data-goto-filter="boot">
             <img src="assets/products/boot-black-orange.jpg" alt="Black ankle safety boot with orange trim" loading="lazy"><span>Ankle Boots</span>
-          </div>
+          </button>
         </div>
         <div class="solar-orbit" style="--r:175px; --a:-20deg;">
-          <div class="solar-planet" style="--color:#DA3A16" data-goto-filter="sport">
+          <button type="button" class="solar-planet" style="--color:#DA3A16" data-goto-filter="sport">
             <img src="assets/products/sport-lime-thick.jpg" alt="Lime sport safety sneaker" loading="lazy"><span>Sneakers &amp; Sport</span>
-          </div>
+          </button>
         </div>
         <div class="solar-orbit" style="--r:215px; --a:250deg;">
-          <div class="solar-planet" style="--color:#FFD400" data-goto-filter="boot">
+          <button type="button" class="solar-planet" style="--color:#FFD400" data-goto-purpose="military">
             <img src="assets/products/boot-tan-military.jpg" alt="Tan military boot" loading="lazy"><span>Military Boots</span>
-          </div>
+          </button>
         </div>
         <div class="solar-orbit" style="--r:255px; --a:100deg;">
-          <div class="solar-planet" style="--color:#DA3A16" data-goto-purpose="industrial">
+          <button type="button" class="solar-planet" style="--color:#DA3A16" data-goto-purpose="industrial">
             <img src="assets/products/lace-black-orange.jpg" alt="Heavy-duty industrial safety shoe" loading="lazy"><span>Industrial &amp; Heavy-Duty</span>
-          </div>
+          </button>
         </div>
         <div class="solar-orbit" style="--r:295px; --a:-60deg;">
-          <div class="solar-planet" style="--color:#e7e7e7" data-goto-purpose="cold">
+          <button type="button" class="solar-planet" style="--color:#e7e7e7" data-goto-purpose="cold">
             <img src="assets/products/boot-brown-fur.jpg" alt="Brown fur-lined cold-weather boot" loading="lazy"><span>Cold-Weather</span>
-          </div>
+          </button>
         </div>
         <div class="solar-orbit" style="--r:335px; --a:200deg;">
-          <div class="solar-planet" style="--color:#FFD400" data-goto-purpose="hivis">
+          <button type="button" class="solar-planet" style="--color:#FFD400" data-goto-purpose="hivis">
             <img src="assets/products/lace-safety-yellow.jpg" alt="High-visibility yellow lace-up safety shoe" loading="lazy"><span>High-Visibility</span>
-          </div>
+          </button>
         </div>
         </div>
       </div>
-      <div class="solar-caption">Eight ranges, one factory floor — tap a badge to jump to that category.</div>
+      <div class="solar-caption">Choose a range to explore. All styles are available for bulk and OEM enquiries.</div>
     </div>
 
     <div class="products-controls">
@@ -3005,130 +3006,130 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="product-carousel-wrap">
       <button class="carousel-nav prev" id="prodPrev" aria-label="Scroll left">‹</button>
       <div class="product-carousel" id="productCarousel">
-        <article class="product-card pop-in" data-category="chelsea" data-name="chelsea safety boot slip-on comfort" data-purpose="everyday" data-product="chelsea-brown">
+        <article tabindex="0" role="button" aria-label="View SJ 2503 details" class="product-card pop-in" data-category="chelsea" data-model="SJ 2503" data-name="sj 2503 chelsea safety boot slip-on comfort" data-purpose="everyday" data-product="chelsea-brown">
           <div class="product-photo"><img src="assets/products/chelsea-brown.jpg" alt="SICURA brown leather chelsea safety boot" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Chelsea Safety Boot</span><span class="product-tag">Slip-On Comfort</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SJ 2503</div><div class="product-meta"><span class="product-name">Chelsea Safety Boot</span><span class="product-tag">Slip-On Comfort</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Oily finish leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="chelsea" data-name="chelsea safety boot all-terrain grip" data-purpose="industrial" data-product="chelsea-black">
+        <article tabindex="0" role="button" aria-label="View SK 2517 details" class="product-card pop-in" data-category="chelsea" data-model="SK 2517" data-name="sk 2517 chelsea safety boot all-terrain grip" data-purpose="industrial" data-product="chelsea-black">
           <div class="product-photo"><img src="assets/products/chelsea-black.jpg" alt="SICURA black chelsea safety boot" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Chelsea Safety Boot</span><span class="product-tag">All-Terrain Grip</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SK 2517</div><div class="product-meta"><span class="product-name">Chelsea Safety Boot</span><span class="product-tag">All-Terrain Grip</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Smooth Type Printed Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="chelsea" data-name="chelsea safety boot heavy-duty build" data-purpose="industrial" data-product="chelsea-red">
+        <article tabindex="0" role="button" aria-label="View SK 2503 details" class="product-card pop-in" data-category="chelsea" data-model="SK 2503" data-name="sk 2503 chelsea safety boot heavy-duty build" data-purpose="industrial" data-product="chelsea-red">
           <div class="product-photo"><img src="assets/products/chelsea-red.jpg" alt="SICURA black chelsea safety boot with red trim" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Chelsea Safety Boot</span><span class="product-tag">Heavy-Duty Build</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SK 2503</div><div class="product-meta"><span class="product-name">Chelsea Safety Boot</span><span class="product-tag">Heavy-Duty Build</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Smooth Type Printed Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="boot" data-name="ankle safety boot cold-weather lined" data-purpose="cold" data-product="boot-brown-fur">
+        <article tabindex="0" role="button" aria-label="View SK 3003 details" class="product-card pop-in" data-category="boot" data-model="SK 3003" data-name="sk 3003 ankle safety boot cold-weather lined" data-purpose="cold" data-product="boot-brown-fur">
           <div class="product-photo"><img src="assets/products/boot-brown-fur.jpg" alt="SICURA brown ankle safety boot with warm lining" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Ankle Safety Boot</span><span class="product-tag">Cold-Weather Lined</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SK 3003</div><div class="product-meta"><span class="product-name">Ankle Safety Boot</span><span class="product-tag">Cold-Weather Lined</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="boot" data-name="ankle safety boot high-ankle support" data-purpose="industrial" data-product="boot-black-orange">
+        <article tabindex="0" role="button" aria-label="View SE 3004 details" class="product-card pop-in" data-category="boot" data-model="SE 3004" data-name="se 3004 ankle safety boot high-ankle support" data-purpose="industrial" data-product="boot-black-orange">
           <div class="product-photo"><img src="assets/products/boot-black-orange.jpg" alt="SICURA black and orange ankle safety boot" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Ankle Safety Boot</span><span class="product-tag">High-Ankle Support</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SE 3004</div><div class="product-meta"><span class="product-name">Ankle Safety Boot</span><span class="product-tag">High-Ankle Support</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="boot" data-name="ankle safety boot work-ready" data-purpose="everyday" data-product="boot-tan-trim">
+        <article tabindex="0" role="button" aria-label="View SJ 19025 details" class="product-card pop-in" data-category="boot" data-model="SJ 19025" data-name="sj 19025 ankle safety boot work-ready" data-purpose="everyday" data-product="boot-tan-trim">
           <div class="product-photo"><img src="assets/products/boot-tan-trim.jpg" alt="SICURA black ankle safety boot with tan trim" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Ankle Safety Boot</span><span class="product-tag">Work-Ready</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SJ 19025</div><div class="product-meta"><span class="product-name">Ankle Safety Boot</span><span class="product-tag">Work-Ready</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU Sole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="lace" data-name="lace-up safety shoe everyday wear" data-purpose="everyday" data-product="lace-black">
+        <article tabindex="0" role="button" aria-label="View SE 1306 details" class="product-card pop-in" data-category="lace" data-model="SE 1306" data-name="se 1306 lace-up safety shoe everyday wear" data-purpose="everyday" data-product="lace-black">
           <div class="product-photo"><img src="assets/products/lace-black.jpg" alt="SICURA black lace-up safety shoe" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Everyday Wear</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SE 1306</div><div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Everyday Wear</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="lace" data-name="lace-up safety shoe reinforced toe" data-purpose="industrial" data-product="lace-black-orange">
+        <article tabindex="0" role="button" aria-label="View SE 2005 details" class="product-card pop-in" data-category="lace" data-model="SE 2005" data-name="se 2005 lace-up safety shoe reinforced toe" data-purpose="industrial" data-product="lace-black-orange">
           <div class="product-photo"><img src="assets/products/lace-black-orange.jpg" alt="SICURA black and orange lace-up safety shoe" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Reinforced Toe</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SE 2005</div><div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Reinforced Toe</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="lace" data-name="lace-up safety shoe classic fit" data-purpose="everyday" data-product="lace-brown">
+        <article tabindex="0" role="button" aria-label="View SD 3006 details" class="product-card pop-in" data-category="lace" data-model="SD 3006" data-name="sd 3006 lace-up safety shoe classic fit" data-purpose="everyday" data-product="lace-brown">
           <div class="product-photo"><img src="assets/products/lace-brown.jpg" alt="SICURA brown lace-up safety shoe" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Classic Fit</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SD 3006</div><div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Classic Fit</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="lace" data-name="lace-up safety shoe durable sole" data-purpose="industrial" data-product="lace-black-tan">
+        <article tabindex="0" role="button" aria-label="View SD 2538. details" class="product-card pop-in" data-category="lace" data-model="SD 2538." data-name="sd 2538. lace-up safety shoe durable sole" data-purpose="industrial" data-product="lace-black-tan">
           <div class="product-photo"><img src="assets/products/lace-black-tan.jpg" alt="SICURA black lace-up safety shoe with tan trim" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Durable Sole</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SD 2538.</div><div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Durable Sole</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="sport" data-name="sport safety sneaker lightweight fit" data-purpose="sport" data-product="sneaker-white">
+        <article tabindex="0" role="button" aria-label="View SK 8050 details" class="product-card pop-in" data-category="sport" data-model="SK 8050" data-name="sk 8050 sport safety sneaker lightweight fit" data-purpose="sport" data-product="sneaker-white">
           <div class="product-photo"><img src="assets/products/sneaker-white.jpg" alt="SICURA white sport safety sneaker" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Sport Safety Sneaker</span><span class="product-tag">Lightweight Fit</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SK 8050</div><div class="product-meta"><span class="product-name">Sport Safety Sneaker</span><span class="product-tag">Lightweight Fit</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>White Microfiber</dd></div><div><dt>Sole</dt><dd>PU Sole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="sport" data-name="sport safety shoe athletic grip" data-purpose="sport" data-product="sport-lime-thick">
+        <article tabindex="0" role="button" aria-label="View SE 2598 details" class="product-card pop-in" data-category="sport" data-model="SE 2598" data-name="se 2598 sport safety shoe athletic grip" data-purpose="sport" data-product="sport-lime-thick">
           <div class="product-photo"><img src="assets/products/sport-lime-thick.jpg" alt="SICURA black and lime sport safety shoe with thick sole" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Sport Safety Shoe</span><span class="product-tag">Athletic Grip</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SE 2598</div><div class="product-meta"><span class="product-name">Sport Safety Shoe</span><span class="product-tag">Athletic Grip</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Forest Print Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="chelsea" data-name="chelsea safety boot suede finish" data-purpose="everyday" data-product="chelsea-black-suede">
+        <article tabindex="0" role="button" aria-label="View SK 715 details" class="product-card pop-in" data-category="chelsea" data-model="SK 715" data-name="sk 715 chelsea safety boot suede finish" data-purpose="everyday" data-product="chelsea-black-suede">
           <div class="product-photo"><img src="assets/products/chelsea-black-suede.jpg" alt="SICURA black suede-finish chelsea safety boot" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Chelsea Safety Boot</span><span class="product-tag">Suede Finish</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SK 715</div><div class="product-meta"><span class="product-name">Chelsea Safety Boot</span><span class="product-tag">Suede Finish</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Microfiber Suede Upper Material</dd></div><div><dt>Sole</dt><dd>PU Sole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="lace" data-name="lace-up safety shoe textured toe low profile" data-purpose="everyday" data-product="lace-black-thread">
+        <article tabindex="0" role="button" aria-label="View SE 613 details" class="product-card pop-in" data-category="lace" data-model="SE 613" data-name="se 613 lace-up safety shoe textured toe low profile" data-purpose="everyday" data-product="lace-black-thread">
           <div class="product-photo"><img src="assets/products/lace-black-thread.jpg" alt="SICURA black lace-up safety shoe with textured toe cap" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Low-Profile Grip</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SE 613</div><div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Low-Profile Grip</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Microfibre with PU top finish</dd></div><div><dt>Sole</dt><dd>PU Sole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="boot" data-name="zip lace ankle boot quick entry" data-purpose="everyday" data-product="boot-tan-zip">
+        <article tabindex="0" role="button" aria-label="View  details" class="product-card pop-in" data-category="boot" data-model="" data-name=" zip lace ankle boot quick entry" data-purpose="everyday" data-product="boot-tan-zip">
           <div class="product-photo"><img src="assets/products/boot-tan-zip.jpg" alt="SICURA tan ankle safety boot with side zip" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Zip-Lace Ankle Boot</span><span class="product-tag">Quick-Zip Entry</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model"></div><div class="product-meta"><span class="product-name">Zip-Lace Ankle Boot</span><span class="product-tag">Quick-Zip Entry</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU Sole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="boot" data-name="military combat boot high ankle field" data-purpose="military" data-product="boot-tan-military">
+        <article tabindex="0" role="button" aria-label="View  details" class="product-card pop-in" data-category="boot" data-model="" data-name=" military combat boot high ankle field" data-purpose="military" data-product="boot-tan-military">
           <div class="product-photo"><img src="assets/products/boot-tan-military.jpg" alt="SICURA tan high-ankle military combat boot" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Military Combat Boot</span><span class="product-tag">High-Ankle Field Boot</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model"></div><div class="product-meta"><span class="product-name">Military Combat Boot</span><span class="product-tag">High-Ankle Field Boot</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>Rubber Outsole and PU Midsole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="boot" data-name="chukka safety boot low profile" data-purpose="everyday" data-product="boot-chukka-black">
+        <article tabindex="0" role="button" aria-label="View SQ 2683 details" class="product-card pop-in" data-category="boot" data-model="SQ 2683" data-name="sq 2683 chukka safety boot low profile" data-purpose="everyday" data-product="boot-chukka-black">
           <div class="product-photo"><img src="assets/products/boot-chukka-black.jpg" alt="SICURA black chukka safety boot" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Chukka Safety Boot</span><span class="product-tag">Low-Profile Ankle</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SQ 2683</div><div class="product-meta"><span class="product-name">Chukka Safety Boot</span><span class="product-tag">Low-Profile Ankle</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Soft Milled Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU Sole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="lace" data-name="lace-up safety shoe steel eyelets" data-purpose="industrial" data-product="lace-steel-eyelet">
+        <article tabindex="0" role="button" aria-label="View SJ 2704 details" class="product-card pop-in" data-category="lace" data-model="SJ 2704" data-name="sj 2704 lace-up safety shoe steel eyelets" data-purpose="industrial" data-product="lace-steel-eyelet">
           <div class="product-photo"><img src="assets/products/lace-steel-eyelet.jpg" alt="SICURA black lace-up safety shoe with steel eyelets" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Steel Eyelets</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SJ 2704</div><div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Steel Eyelets</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>Rubber Sole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="boot" data-name="tall combat boot field ready lace" data-purpose="military" data-product="boot-tall-combat">
+        <article tabindex="0" role="button" aria-label="View SQ 2685 details" class="product-card pop-in" data-category="boot" data-model="SQ 2685" data-name="sq 2685 tall combat boot field ready lace" data-purpose="military" data-product="boot-tall-combat">
           <div class="product-photo"><img src="assets/products/boot-tall-combat.jpg" alt="SICURA tall black lace-up combat boot" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Tall Combat Boot</span><span class="product-tag">Field-Ready Lace-Up</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SQ 2685</div><div class="product-meta"><span class="product-name">Tall Combat Boot</span><span class="product-tag">Field-Ready Lace-Up</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>Rubber Outsole and PU Midsole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="boot" data-name="ankle safety boot side zip entry" data-purpose="everyday" data-product="boot-zip-ankle">
+        <article tabindex="0" role="button" aria-label="View SQ 2682 details" class="product-card pop-in" data-category="boot" data-model="SQ 2682" data-name="sq 2682 ankle safety boot side zip entry" data-purpose="everyday" data-product="boot-zip-ankle">
           <div class="product-photo"><img src="assets/products/boot-zip-ankle.jpg" alt="SICURA black ankle safety boot with side zip" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Ankle Safety Boot</span><span class="product-tag">Side-Zip Entry</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SQ 2682</div><div class="product-meta"><span class="product-name">Ankle Safety Boot</span><span class="product-tag">Side-Zip Entry</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Plain Soft Corrected Grain Leather and Mix of Textile</dd></div><div><dt>Sole</dt><dd>PU Sole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="lace" data-name="lace-up safety shoe tan sole" data-purpose="everyday" data-product="lace-black-tansole">
+        <article tabindex="0" role="button" aria-label="View SD 3006 details" class="product-card pop-in" data-category="lace" data-model="SD 3006" data-name="sd 3006 lace-up safety shoe tan sole" data-purpose="everyday" data-product="lace-black-tansole">
           <div class="product-photo"><img src="assets/products/lace-black-tansole.jpg" alt="SICURA black lace-up safety shoe with tan sole" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Tan Contrast Sole</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SD 3006</div><div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Tan Contrast Sole</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="boot" data-name="combat boot canvas panel field" data-purpose="military" data-product="boot-canvas-combat">
+        <article tabindex="0" role="button" aria-label="View JUNGLE BOOT details" class="product-card pop-in" data-category="boot" data-model="JUNGLE BOOT" data-name="jungle boot combat boot canvas panel field" data-purpose="military" data-product="boot-canvas-combat">
           <div class="product-photo"><img src="assets/products/boot-canvas-combat.jpg" alt="SICURA black canvas-panel combat boot" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Combat Boot</span><span class="product-tag">Canvas-Panel Build</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">JUNGLE BOOT</div><div class="product-meta"><span class="product-name">Combat Boot</span><span class="product-tag">Canvas-Panel Build</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>BLACK WATER REPELLENT PE Textile</dd></div><div><dt>Sole</dt><dd>Rubber Outsole and PU Midsole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="boot" data-name="tactical duty boot side zip" data-purpose="military" data-product="boot-tactical-hex">
+        <article tabindex="0" role="button" aria-label="View SQ 2684 details" class="product-card pop-in" data-category="boot" data-model="SQ 2684" data-name="sq 2684 tactical duty boot side zip" data-purpose="military" data-product="boot-tactical-hex">
           <div class="product-photo"><img src="assets/products/boot-tactical-hex.jpg" alt="SICURA black tactical duty boot" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Tactical Duty Boot</span><span class="product-tag">Side-Zip Entry</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SQ 2684</div><div class="product-meta"><span class="product-name">Tactical Duty Boot</span><span class="product-tag">Side-Zip Entry</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Plain Soft Corrected Grain Leather and Mix of Textile</dd></div><div><dt>Sole</dt><dd>Rubber Outsole and PU Midsole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="lace" data-name="safety shoe high visibility yellow" data-purpose="hivis" data-product="lace-safety-yellow">
+        <article tabindex="0" role="button" aria-label="View SJ 19025 details" class="product-card pop-in" data-category="lace" data-model="SJ 19025" data-name="sj 19025 safety shoe high visibility yellow" data-purpose="hivis" data-product="lace-safety-yellow">
           <div class="product-photo"><img src="assets/products/lace-safety-yellow.jpg" alt="SICURA black safety shoe with yellow trim" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Safety Shoe</span><span class="product-tag">High-Visibility Trim</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SJ 19025</div><div class="product-meta"><span class="product-name">Safety Shoe</span><span class="product-tag">High-Visibility Trim</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Corrected Grain Leather</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
-        <article class="product-card pop-in" data-category="sport" data-name="sport safety shoe suede blue" data-purpose="sport" data-product="sport-suede-blue">
+        <article tabindex="0" role="button" aria-label="View SJ 2703 details" class="product-card pop-in" data-category="sport" data-model="SJ 2703" data-name="sj 2703 sport safety shoe suede blue" data-purpose="sport" data-product="sport-suede-blue">
           <div class="product-photo"><img src="assets/products/sport-suede-blue.jpg" alt="SICURA blue suede sport safety shoe" loading="lazy"></div>
-          <div class="product-meta"><span class="product-name">Sport Safety Shoe</span><span class="product-tag">Suede Trail Build</span></div>
-          <div class="product-price">Price on request</div>
+          <div class="product-model">SJ 2703</div><div class="product-meta"><span class="product-name">Sport Safety Shoe</span><span class="product-tag">Suede Trail Build</span></div>
+          <dl class="card-specs"><div><dt>Upper</dt><dd>Suede Leather with Mix of Birex Textile</dd></div><div><dt>Sole</dt><dd>PU PU Dual Density</dd></div></dl><div class="product-price">Price on request</div>
         </article>
       </div>
       <button class="carousel-nav next" id="prodNext" aria-label="Scroll right">›</button>
@@ -3326,7 +3327,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2>The Footage Behind SICURA</h2>
       <p class="videos-lede">Raw shots straight off set and the edited cuts we run on-site and on socials — collected in one place. Tap any card to watch it with sound.</p>
     </div>
-    <div class="videos-grid">
+    <div class="videos-grid media-curated" id="videosGallery">
       <div class="video-card pop-in" data-video="ags-hero-sicura-smoke">
         <video src="assets/video/ags-hero-sicura-smoke.mp4" poster="assets/video/posters/ags-hero-sicura-smoke.jpg" muted loop playsinline preload="metadata"></video>
         <div class="video-scrim"></div>
@@ -3400,6 +3401,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
+    <button type="button" class="media-toggle" data-media-toggle="videosGallery" aria-controls="videosGallery" aria-expanded="false">View all films <span aria-hidden="true">+</span></button>
   </div>
 </section>
 
@@ -3410,7 +3412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2>The Hands Behind Every Pair</h2>
       <p class="videos-lede">Every SICURA shoe passes through real people before it ships — stitched, checked and packed by a floor that runs on skill built over years, not scripts. A mixed team of men and women work side by side on the same line, the same machines, the same standard.</p>
     </div>
-    <div class="videos-grid">
+    <div class="videos-grid media-curated" id="peopleGallery">
       <div class="video-card pop-in" data-video="floor-production-line">
         <video src="assets/video/floor-production-line.mp4" poster="assets/video/posters/floor-production-line.jpg" muted loop playsinline preload="metadata"></video>
         <div class="video-scrim"></div>
@@ -3470,6 +3472,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3>Responsible on the Floor</h3>
       <p>Every pair here is made under the same roof shown above — never subcontracted. That means the people stitching, testing and packing your order are people we work with directly, on equipment we maintain ourselves, under the ISI, ISO and CE processes already covering this range. It also means less waste: footwear that fails in-house testing gets caught before it ever reaches a shipment, not after.</p>
     </div>
+    <button type="button" class="media-toggle" data-media-toggle="peopleGallery" aria-controls="peopleGallery" aria-expanded="false">View all factory stories <span aria-hidden="true">+</span></button>
   </div>
 </section>
 
@@ -4487,7 +4490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       seen[slug] = true;
       var name = card.querySelector('.product-name');
       var tag = card.querySelector('.product-tag');
-      var label = (name ? name.textContent : slug) + (tag ? ' — ' + tag.textContent : '');
+      var label = (card.getAttribute('data-model') ? card.getAttribute('data-model') + ' — ' : '') + (name ? name.textContent : slug) + (tag ? ' — ' + tag.textContent : '');
       var opt = document.createElement('option');
       opt.value = slug;
       opt.textContent = label;
@@ -4974,7 +4977,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       imgEl.src = d.img;
       imgEl.alt = name;
       tagEl.textContent = tag;
-      nameEl.textContent = name;
+      var modelRow = (d.specs || []).find(function(row){ return row.k === 'Model'; });
+      nameEl.textContent = (modelRow ? modelRow.v + ' — ' : '') + name;
       priceEl.textContent = price;
       descEl.textContent = d.desc;
       if (specsEl) {
@@ -5156,12 +5160,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       v.muted = true;
       v.removeAttribute('controls');
       if (!v.paused) { v.pause(); }
-      v.play().catch(function () {});
+      var rect = card.getBoundingClientRect();
+      if (card.getClientRects().length && rect.bottom > 0 && rect.top < innerHeight) v.play().catch(function () {});
     }
 
     cards.forEach(function (card) {
       var v = card.querySelector('video');
-      v.play().catch(function () {}); // silent autoplay preview loop
+      // IntersectionObserver starts only visible previews; no eager background autoplay.
 
       card.addEventListener('click', function () {
         if (card.classList.contains('is-playing')) return;
@@ -5252,6 +5257,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 })();
 </script>
 <script type="module" src="assets/engineering.js?v=glass-hd1"></script>
+<script src="assets/refinement.js?v=1" defer></script>
 </body>
 </html>
+
 
