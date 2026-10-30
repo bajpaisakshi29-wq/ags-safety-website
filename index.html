@@ -2707,6 +2707,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link rel="stylesheet" href="assets/engineering.css?v=glass-hd1">
 <link rel="stylesheet" href="assets/refinement.css?v=1">
+
+<style id="showcase-spacing-fix">
+  /* Clip horizontal overflow without making body a sticky scroll container. */
+  html, body { overflow-x: clip; }
+  #engineering { min-height: 175vh; }
+  #engineering + #leadership { padding-top: 64px; }
+  /* A static photo needs no reserved animation scroll space. */
+  #engineering:has(.glass-stage.failed) { min-height: 0; }
+  #engineering:has(.glass-stage.failed) .glass-sticky { position: relative; }
+  @media (max-width: 760px) {
+    #engineering { min-height: 165svh; }
+    #engineering + #leadership { padding-top: 48px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #engineering { min-height: 0; }
+    #engineering .glass-sticky { position: relative; }
+  }
+</style>
 </head>
 
 <body><script>
