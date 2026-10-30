@@ -2705,24 +2705,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </style>
 
 
-<link rel="stylesheet" href="assets/engineering.css?v=glass-hd1">
 <link rel="stylesheet" href="assets/refinement.css?v=1">
 
-<style id="showcase-spacing-fix">
-  /* Clip horizontal overflow without making body a sticky scroll container. */
+<style id="leadership-spacing">
   html, body { overflow-x: clip; }
-  #engineering { min-height: 175vh; }
-  #engineering + #leadership { padding-top: 64px; }
-  /* A static photo needs no reserved animation scroll space. */
-  #engineering:has(.glass-stage.failed) { min-height: 0; }
-  #engineering:has(.glass-stage.failed) .glass-sticky { position: relative; }
+  #about + #leadership { padding-top: 64px; }
   @media (max-width: 760px) {
-    #engineering { min-height: 165svh; }
-    #engineering + #leadership { padding-top: 48px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    #engineering { min-height: 0; }
-    #engineering .glass-sticky { position: relative; }
+    #about + #leadership { padding-top: 48px; }
   }
 </style>
 </head>
@@ -2867,22 +2856,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-
-<section class="sicura-glass view" id="engineering" data-view="about" aria-labelledby="glassTitle">
- <div class="glass-sticky"><div class="glass-inner">
-  <header class="glass-heading"><div><span class="glass-kicker"><i aria-hidden="true"></i>SICURA / SAFETY FOOTWEAR</span><h2 id="glassTitle">Protection,<br><em>in every detail.</em></h2></div><p>A closer look at the details <br>that define SICURA.</p></header>
-  <div class="glass-stage" id="glassStage">
-   <img loading="lazy" decoding="async" class="glass-poster" id="glassPoster" src="assets/products/sicura-dark-studio.png" width="1024" height="765" alt="SICURA black safety boot with yellow outsole and contrast stitching">
-   <canvas id="glassCanvas" aria-label="Scroll-controlled SICURA shoe changing from leather to warm iridescent glass and back"></canvas>
-   <div class="glass-callout"><span id="glassCalloutTitle">Considered construction</span><p id="glassCalloutText">From the collar to the sole.</p></div>
-   <div class="glass-stage-bottom"><span id="glassHint">Scroll to transform the shoe <b aria-hidden="true">↓</b></span><button type="button" id="glassPause" aria-pressed="false">Hold view</button></div>
-   <p class="glass-loading" id="glassLoading" role="status"></p>
-  </div>
-  <div class="glass-timeline" aria-hidden="true"><div class="glass-progress" id="glassProgress"></div></div>
-  <div class="glass-footer"><span>SICURA · Be on safe side</span><a href="#products" data-goto-view="products">View safety footwear <span aria-hidden="true">↗</span></a></div>
- </div></div>
-</section>
-
 
 <section class="leadership-section view" id="leadership" data-view="leadership">
   <div class="leadership-inner">
@@ -5296,7 +5269,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   render();
 })();
 </script>
-<script type="module" src="assets/engineering-loader.js?v=loadfix1"></script>
 <script src="assets/refinement.js?v=2" defer></script>
 </body>
 </html>
