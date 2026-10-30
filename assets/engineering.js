@@ -25,7 +25,7 @@ if(section){
  }
  async function init(){
   try{
-   renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,precision:'highp',powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(Math.max(devicePixelRatio||1,1.5),2.5));renderer.transmissionResolutionScale=1;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.95;renderer.outputColorSpace=THREE.SRGBColorSpace;
+   renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,precision:'highp',powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(Math.max(devicePixelRatio||1,1.5),2.5));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.95;renderer.outputColorSpace=THREE.SRGBColorSpace;
    scene=new THREE.Scene();environment=envMap();scene.environment=environment;
    camera=new THREE.OrthographicCamera(-3,3,1.8,-1.8,.1,40);camera.position.set(0,.1,8);camera.lookAt(0,0,0);
    scene.add(new THREE.HemisphereLight('#e9e8e1','#12170f',2.2));const key=new THREE.DirectionalLight('#fff2d9',3);key.position.set(-3,4,5);scene.add(key);const rim=new THREE.DirectionalLight('#bed0e2',2.1);rim.position.set(3,1,-2);scene.add(rim);
