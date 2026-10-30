@@ -15,6 +15,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 <title>SICURA — Safety & Military Footwear by AGS Safety, Kanpur</title>
 <meta name="description" content="SICURA is the safety and military footwear brand of AGS Safety Equipments, Kanpur. AGS Safety manufactures SICURA safety and military footwear in Kanpur, India — 20+ years, in-house R&D to shipping, exporting to three continents." />
+<link rel="preload" as="image" href="ags-hero-poster.jpg" fetchpriority="high">
 <link rel="canonical" href="https://www.sicura.in/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="AGS Safety / SICURA" />
@@ -2708,7 +2709,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="assets/refinement.css?v=1">
 </head>
 
-<body><script>document.documentElement.classList.add("refinement-js");</script>
+<body><script>
+window.sicuraLoadVideo=function(video){
+ if(!video || video.dataset.loaded==='true')return;
+ var sources=video.querySelectorAll('source[data-src]'),hasSource=video.hasAttribute('data-src')||sources.length;
+ if(!hasSource)return;
+ video.dataset.loaded='true';
+ if(video.dataset.src){video.src=video.dataset.src;delete video.dataset.src;}
+ sources.forEach(function(source){source.src=source.dataset.src;delete source.dataset.src;});
+ video.load();
+};
+document.addEventListener('DOMContentLoaded',function(){
+ var videos=document.querySelectorAll('video');
+ if(!('IntersectionObserver' in window))return;
+ var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){
+  var video=entry.target;
+  if(entry.isIntersecting){window.sicuraLoadVideo(video);if(video.dataset.autoplay==='true'||video.autoplay)video.play().catch(function(){});}
+  else if(!video.closest('.video-card.is-playing'))video.pause();
+ });},{rootMargin:'100px 0px',threshold:0});
+ videos.forEach(function(video){observer.observe(video);});
+});
+</script><script>document.documentElement.classList.add("refinement-js");</script>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVL8Z5LT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -2749,7 +2770,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="hero-section view active" id="top" data-view="top">
 <div class="stage">
-<video class="hero-video" autoplay muted loop playsinline preload="auto" poster="ags-hero-poster.jpg">
+<video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="ags-hero-poster.jpg">
   <source src="assets/video/ags-hero-sicura-smoke.webm" type="video/webm">
   <source src="assets/video/ags-hero-sicura-smoke.mp4" type="video/mp4">
 </video>
@@ -2819,9 +2840,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="about-brandfilm pop-in delay-2">
-        <video autoplay muted loop playsinline preload="none">
-          <source src="assets/video/about-boot-bricks.webm" type="video/webm">
-          <source src="assets/video/about-boot-bricks.mp4" type="video/mp4">
+        <video data-autoplay="true" muted loop playsinline preload="none">
+          <source data-src="assets/video/about-boot-bricks.webm" type="video/webm">
+          <source data-src="assets/video/about-boot-bricks.mp4" type="video/mp4">
         </video>
         <span class="about-brandfilm-label">SICURA — Built to Wear In</span>
       </div>
@@ -2833,7 +2854,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="glass-sticky"><div class="glass-inner">
   <header class="glass-heading"><div><span class="glass-kicker"><i aria-hidden="true"></i>SICURA / SAFETY FOOTWEAR</span><h2 id="glassTitle">Protection,<br><em>in every detail.</em></h2></div><p>A closer look at the details <br>that define SICURA.</p></header>
   <div class="glass-stage" id="glassStage">
-   <img class="glass-poster" id="glassPoster" src="assets/products/sicura-dark-studio.png" width="1024" height="765" alt="SICURA black safety boot with yellow outsole and contrast stitching">
+   <img loading="lazy" decoding="async" class="glass-poster" id="glassPoster" src="assets/products/sicura-dark-studio.png" width="1024" height="765" alt="SICURA black safety boot with yellow outsole and contrast stitching">
    <canvas id="glassCanvas" aria-label="Scroll-controlled SICURA shoe changing from leather to warm iridescent glass and back"></canvas>
    <div class="glass-callout"><span id="glassCalloutTitle">Considered construction</span><p id="glassCalloutText">From the collar to the sole.</p></div>
    <div class="glass-stage-bottom"><span id="glassHint">Scroll to transform the shoe <b aria-hidden="true">↓</b></span><button type="button" id="glassPause" aria-pressed="false">Hold view</button></div>
@@ -3203,9 +3224,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <section class="cap-section view" id="capabilities" data-view="capabilities">
-  <video class="cap-ambient-smoke" id="capScrubVideo" muted playsinline preload="auto">
-    <source src="assets/video/capabilities-lace-scrub.webm" type="video/webm">
-    <source src="assets/video/capabilities-lace-scrub.mp4" type="video/mp4">
+  <video class="cap-ambient-smoke" id="capScrubVideo" muted playsinline preload="none">
+    <source data-src="assets/video/capabilities-lace-scrub.webm" type="video/webm">
+    <source data-src="assets/video/capabilities-lace-scrub.mp4" type="video/mp4">
   </video>
   <div class="cap-inner">
     <div class="cap-eyebrow">Capabilities</div>
@@ -3329,7 +3350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="videos-grid media-curated" id="videosGallery">
       <div class="video-card pop-in" data-video="ags-hero-sicura-smoke">
-        <video src="assets/video/ags-hero-sicura-smoke.mp4" poster="assets/video/posters/ags-hero-sicura-smoke.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/ags-hero-sicura-smoke.mp4" poster="assets/video/posters/ags-hero-sicura-smoke.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3338,7 +3359,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="about-boot-bricks">
-        <video src="assets/video/about-boot-bricks.mp4" poster="assets/video/posters/about-boot-bricks.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/about-boot-bricks.mp4" poster="assets/video/posters/about-boot-bricks.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3347,7 +3368,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="capabilities-lace-scrub">
-        <video src="assets/video/capabilities-lace-scrub.mp4" poster="assets/video/posters/capabilities-lace-scrub.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/capabilities-lace-scrub.mp4" poster="assets/video/posters/capabilities-lace-scrub.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3356,7 +3377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="chelsea-velvet-reveal">
-        <video src="assets/video/chelsea-velvet-reveal.mp4" poster="assets/video/posters/chelsea-velvet-reveal.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/chelsea-velvet-reveal.mp4" poster="assets/video/posters/chelsea-velvet-reveal.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3365,7 +3386,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="quality-lab-tour">
-        <video src="assets/video/quality-lab-tour.mp4" poster="assets/video/posters/quality-lab-tour.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/quality-lab-tour.mp4" poster="assets/video/posters/quality-lab-tour.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3374,7 +3395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="chelsea-brick-reveal">
-        <video src="assets/video/chelsea-brick-reveal.mp4" poster="assets/video/posters/chelsea-brick-reveal.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/chelsea-brick-reveal.mp4" poster="assets/video/posters/chelsea-brick-reveal.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3383,7 +3404,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="military-brick-reveal">
-        <video src="assets/video/military-brick-reveal.mp4" poster="assets/video/posters/military-brick-reveal.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/military-brick-reveal.mp4" poster="assets/video/posters/military-brick-reveal.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3392,7 +3413,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="chelsea-dust-impact">
-        <video src="assets/video/chelsea-dust-impact.mp4" poster="assets/video/posters/chelsea-dust-impact.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/chelsea-dust-impact.mp4" poster="assets/video/posters/chelsea-dust-impact.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3414,7 +3435,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="videos-grid media-curated" id="peopleGallery">
       <div class="video-card pop-in" data-video="floor-production-line">
-        <video src="assets/video/floor-production-line.mp4" poster="assets/video/posters/floor-production-line.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/floor-production-line.mp4" poster="assets/video/posters/floor-production-line.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3423,7 +3444,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="floor-insole-team">
-        <video src="assets/video/floor-insole-team.mp4" poster="assets/video/posters/floor-insole-team.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/floor-insole-team.mp4" poster="assets/video/posters/floor-insole-team.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3432,7 +3453,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="floor-sole-prep">
-        <video src="assets/video/floor-sole-prep.mp4" poster="assets/video/posters/floor-sole-prep.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/floor-sole-prep.mp4" poster="assets/video/posters/floor-sole-prep.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3441,7 +3462,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="floor-tag-stitch">
-        <video src="assets/video/floor-tag-stitch.mp4" poster="assets/video/posters/floor-tag-stitch.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/floor-tag-stitch.mp4" poster="assets/video/posters/floor-tag-stitch.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3450,7 +3471,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="floor-stitch-closeup">
-        <video src="assets/video/floor-stitch-closeup.mp4" poster="assets/video/posters/floor-stitch-closeup.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/floor-stitch-closeup.mp4" poster="assets/video/posters/floor-stitch-closeup.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -3459,7 +3480,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="video-card pop-in" data-video="floor-heat-tunnel">
-        <video src="assets/video/floor-heat-tunnel.mp4" poster="assets/video/posters/floor-heat-tunnel.jpg" muted loop playsinline preload="metadata"></video>
+        <video data-src="assets/video/floor-heat-tunnel.mp4" poster="assets/video/posters/floor-heat-tunnel.jpg" muted loop playsinline preload="none"></video>
         <div class="video-scrim"></div>
         <div class="video-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
         <div class="video-meta">
@@ -4120,7 +4141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="product-modal-close" id="productModalClose" aria-label="Close">×</button>
     <div class="product-modal-media">
       <div class="product-modal-zoom" id="productModalZoom">
-        <img id="productModalImg" src="" alt="">
+        <img loading="lazy" decoding="async" id="productModalImg" src="" alt="">
       </div>
       <div class="product-modal-hint">Hover to zoom</div>
     </div>
@@ -4294,7 +4315,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     var ready = false;
     video.addEventListener('loadedmetadata', function () { ready = true; });
-    video.load();
+    // Source is attached near the capabilities section by the visibility observer.
 
     var ticking = false;
     function scrub() {
@@ -5174,6 +5195,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         card.classList.add('is-playing');
         v.muted = false;
         v.setAttribute('controls', '');
+        window.sicuraLoadVideo(v);
         v.currentTime = 0;
         v.play().catch(function () {});
       });
@@ -5190,7 +5212,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         entries.forEach(function (entry) {
           var card = entry.target;
           var v = card.querySelector('video');
-          if (entry.isIntersecting) { v.play().catch(function () {}); }
+          if (entry.isIntersecting) { window.sicuraLoadVideo(v); v.play().catch(function () {}); }
           else if (!card.classList.contains('is-playing')) { v.pause(); }
         });
       }, { threshold: 0.1 });
@@ -5256,8 +5278,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   render();
 })();
 </script>
-<script type="module" src="assets/engineering.js?v=glass-hd1"></script>
-<script src="assets/refinement.js?v=1" defer></script>
+<script type="module" src="assets/engineering-loader.js?v=loadfix1"></script>
+<script src="assets/refinement.js?v=2" defer></script>
 </body>
 </html>
 
