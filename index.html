@@ -2735,6 +2735,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .sicura-image-frame img{filter:url(#sicura-photo-white)!important}
 .sicura-image-frame img[src*="sneaker-white.jpg"]{filter:none!important}
 </style>
+
+<style id="compact-mobile-products">
+.mobile-range-controls,.mobile-purpose-panel,.mobile-results{display:none}
+.card-enquiry{display:block;width:100%;margin-top:18px;padding:12px 14px;border:1px solid #665a16;border-radius:6px;background:transparent;color:#f3dc55;text-align:left;font-family:inherit;font-size:12px;line-height:1.4;cursor:pointer}
+.card-enquiry:hover{background:#27230d}.card-enquiry:focus-visible{outline:2px solid #ffdc00;outline-offset:3px}
+@media(max-width:640px){
+#products .solar-mobile-hint,#products #solarWrap,#products #productFilters,#products #productPurposeFilters{display:none!important}
+#products .cap-lede{margin-bottom:16px}#products .products-controls{display:flex!important;flex-direction:column;gap:12px!important;margin-top:16px!important;margin-bottom:18px!important}
+.mobile-range-controls{display:flex;gap:10px;align-items:flex-end;width:100%}.mobile-range-controls label{flex:1;min-width:0;font-size:11px;color:#c2c2b9}.mobile-range-controls select,.mobile-purpose-panel select{display:block;width:100%;min-height:44px;margin-top:6px;border:1px solid #4d4d43;border-radius:6px;padding:9px 11px;background:#141510;color:#f4f2e9;font-family:inherit;font-size:14px}
+.mobile-filter-toggle{min-height:44px;border:1px solid #4d4d43;border-radius:6px;background:#141510;color:#f4f2e9;padding:9px 13px;font-family:inherit;font-size:12px}
+.mobile-purpose-panel:not([hidden]){display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px}.mobile-purpose-panel[hidden]{display:none}.mobile-purpose-panel label{flex:1;min-width:170px;font-size:11px;color:#c2c2b9}.mobile-filter-reset{min-height:44px;background:transparent;color:#f3dc55;border:0;text-decoration:underline;font-family:inherit;font-size:12px}
+.mobile-results{display:block;margin:0;color:#aaa99c;font-size:11px}.mobile-results:empty{display:none}
+#products #productSearchWrap{width:100%;max-width:none;margin:0;min-height:44px}#products .product-search input{font-size:16px}.card-enquiry{min-height:44px;margin-top:14px}
+}
+</style>
 </head>
 
 <body><svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden"><defs><filter id="sicura-photo-white" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1" result="r"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1" result="g"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1" result="b"/><feBlend in="r" in2="g" mode="darken" result="rg"/><feBlend in="rg" in2="b" mode="darken" result="minimum"/><feComponentTransfer in="minimum" result="maskColour"><feFuncR type="table" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.875 0.75 0.625 0.5 0.375 0.25 0.125 0 0 0 0 0 0 0 0 0 0 0"/></feComponentTransfer><feColorMatrix in="maskColour" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0" result="mask"/><feComposite in="SourceGraphic" in2="mask" operator="in"/></filter></defs></svg><script>
@@ -3003,6 +3018,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="products-controls">
+<div class="mobile-range-controls"><label for="mobileCollection">Collection<select id="mobileCollection"><option value="all">All footwear</option><option value="chelsea">Chelsea boots</option><option value="boot">Ankle boots</option><option value="lace">Lace-up shoes</option><option value="sport">Sneakers & sport</option></select></label><button type="button" class="mobile-filter-toggle" id="mobileFilterToggle" aria-expanded="false" aria-controls="mobilePurposePanel">Filters</button></div>
+<div class="mobile-purpose-panel" id="mobilePurposePanel" hidden><label for="mobilePurpose">Purpose<select id="mobilePurpose"><option value="all">All purposes</option><option value="industrial">Industrial & heavy-duty</option><option value="military">Military & tactical</option><option value="cold">Cold-weather</option><option value="everyday">Everyday & site-ready</option><option value="sport">Sport & athletic</option><option value="hivis">High-visibility</option></select></label><button type="button" class="mobile-filter-reset" id="mobileFilterReset">Reset filters</button></div>
+<p class="mobile-results" id="mobileProductResults" role="status" aria-live="polite"></p>
+
       <div class="product-search" id="productSearchWrap">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         <span class="search-ghost" id="searchGhost">Search Chelsea Boots</span>
@@ -4704,9 +4723,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (show) visibleCount++;
       });
       empty.classList.toggle('visible', visibleCount === 0);
+      document.getElementById('mobileCollection').value=activeFilter;
+      document.getElementById('mobilePurpose').value=activePurpose;
+      document.getElementById('mobileFilterToggle').textContent=activePurpose==='all'?'Filters':'Filters · 1';
+      document.getElementById('mobileProductResults').textContent=visibleCount+' of '+cards.length+' styles';
+
     }
 
     input.addEventListener('input', applyFilters);
+    var mobileCollection=document.getElementById('mobileCollection'),mobilePurpose=document.getElementById('mobilePurpose');
+    mobileCollection.addEventListener('change',function(){filters.querySelector('[data-filter="'+this.value+'"]').click();carousel.scrollLeft=0;});
+    mobilePurpose.addEventListener('change',function(){document.querySelector('#productPurposeFilters [data-purpose="'+this.value+'"]').click();carousel.scrollLeft=0;});
+    document.getElementById('mobileFilterToggle').addEventListener('click',function(){var panel=document.getElementById('mobilePurposePanel');panel.hidden=!panel.hidden;this.setAttribute('aria-expanded',String(!panel.hidden));});
+    document.getElementById('mobileFilterReset').addEventListener('click',function(){input.value='';filters.querySelector('[data-filter="all"]').click();document.querySelector('#productPurposeFilters [data-purpose="all"]').click();carousel.scrollLeft=0;});
+
 
     filters.addEventListener('click', function (e) {
       var btn = e.target.closest('.filter-chip');
@@ -5276,6 +5306,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
 
+</script>
+
+<script id="product-card-enquiries">
+(function(){
+ document.querySelectorAll('.product-card').forEach(function(card){
+  var title=(card.querySelector('.product-model')?.textContent||'').trim(),name=(card.querySelector('.product-name')?.textContent||'').trim();
+  var button=document.createElement('button');button.type='button';button.className='card-enquiry';button.textContent='Request quote →';button.setAttribute('aria-label','Request quote for '+(title?title+' — ':'')+name);
+  button.addEventListener('click',function(event){event.stopPropagation();var field=document.getElementById('oem-message');var label=(title?title+' — ':'')+name;if(!title)label+=' (article '+card.dataset.product+')';var line='Product of interest: '+label+'.';field.value=field.value.replace(/Product of interest:[^\n]*\n?/,'');field.value=line+(field.value?'\n'+field.value:'');document.getElementById('oem').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});field.focus({preventScroll:true});});
+  button.addEventListener('keydown',function(event){event.stopPropagation();});card.setAttribute('role','group');card.removeAttribute('tabindex');var photo=card.querySelector('.product-photo');photo.setAttribute('role','button');photo.setAttribute('tabindex','0');photo.setAttribute('aria-label','View '+(title?title+' — ':'')+name+' details');photo.addEventListener('keydown',function(event){if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();card.click();}});card.appendChild(button);
+ });
+document.getElementById('mobileProductResults').textContent=document.querySelectorAll('.product-card').length+' styles';
+})();
 </script>
 </body>
 </html>
