@@ -2714,6 +2714,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     #about + #leadership { padding-top: 48px; }
   }
 </style>
+<style id="product-framing-v1">
+/* Fit the actual shoe bounds, rather than the white canvas in the source photo. */
+.sicura-image-frame{display:block;position:relative;width:100%;height:100%;overflow:hidden;background:#fff;flex-shrink:0}
+.sicura-image-frame img{position:absolute!important;top:0!important;left:0!important;width:var(--shoe-source-w)!important;height:var(--shoe-source-h)!important;max-width:none!important;max-height:none!important;padding:0!important;margin:0!important;object-fit:fill!important;transform:var(--shoe-matrix)!important;transform-origin:0 0!important;transition:none!important;filter:none!important}
+.product-card,.product-card:hover{transform:none!important}
+.product-card:hover .sicura-image-frame img{transform:var(--shoe-matrix)!important}
+.product-photo{aspect-ratio:3/2}.product-photo .sicura-image-frame{width:100%;height:100%}
+.solar-planet .sicura-image-frame{position:relative!important;display:block!important;width:54px;height:44px;border-radius:3px}
+.product-modal-media{aspect-ratio:4/3;align-self:start}.product-modal-zoom .sicura-image-frame{transition:transform .18s ease}.product-modal-zoom.zoomed .sicura-image-frame{transform:scale(1.6)}
+.related-card .related-photo{aspect-ratio:3/2}.related-card:hover .sicura-image-frame img{transform:var(--shoe-matrix)!important}
+@media(max-width:950px){.solar-planet .sicura-image-frame{width:40px;height:44px}}
+@media(max-width:640px){.solar-planet .sicura-image-frame{width:42px;height:36px}}
+@media(prefers-reduced-motion:reduce){.product-modal-zoom .sicura-image-frame{transition:none}}
+
+</style>
 </head>
 
 <body><script>
@@ -4335,25 +4350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (!dock) return;
     var items = Array.prototype.slice.call(dock.querySelectorAll('.dock-item'));
 
-    var supportsHoverFx =
-      window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
-      window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
-
-    if (supportsHoverFx) {
-      dock.addEventListener('mousemove', function (e) {
-        items.forEach(function (item) {
-          var rect = item.getBoundingClientRect();
-          var center = rect.left + rect.width / 2;
-          var dist = Math.abs(e.clientX - center);
-          var scale = Math.max(1, 1.55 - dist / 130);
-          var lift = (scale - 1) * 14;
-          item.style.transform = 'scale(' + scale + ') translateY(' + (-lift) + 'px)';
-        });
-      });
-      dock.addEventListener('mouseleave', function () {
-        items.forEach(function (item) { item.style.transform = 'scale(1) translateY(0)'; });
-      });
-    }
+    // Product images stay level; the photo framing below handles their scale.
   })();
 
   (function () {
@@ -5270,6 +5267,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 })();
 </script>
 <script src="assets/refinement.js?v=2" defer></script>
+<script id="product-framing-script">
+(function(){
+ 'use strict';
+ const frames={"boot-black-orange.jpg":[792,594,52,67,693,450,0],"boot-brown-fur.jpg":[787,591,47,68,694,461,0],"boot-canvas-combat.jpg":[831,624,52,56,730,510,0],"boot-chukka-black.jpg":[785,589,45,96,694,397,0],"boot-tactical-hex.jpg":[941,706,123,49,695,606,2.3],"boot-tall-combat.jpg":[820,615,64,43,695,526,0],"boot-tan-military.jpg":[828,621,69,48,695,526,0],"boot-tan-trim.jpg":[788,591,47,92,695,406,0],"boot-tan-zip.jpg":[792,594,51,96,695,399,0],"boot-zip-ankle.jpg":[809,607,46,91,715,422,0],"chelsea-black-suede.jpg":[787,591,47,50,695,494,0],"chelsea-black.jpg":[799,600,51,40,694,516,0],"chelsea-brown.jpg":[813,610,60,43,698,515,0],"chelsea-red.jpg":[802,602,56,42,695,513,0],"lace-black-orange.jpg":[792,594,51,127,695,344,0],"lace-black-tan.jpg":[792,594,51,127,695,337,0],"lace-black-tansole.jpg":[789,592,49,130,695,337,0],"lace-black-thread.jpg":[790,593,49,130,695,334,0],"lace-black.jpg":[783,588,43,115,694,356,0],"lace-brown.jpg":[792,594,50,124,696,343,0],"lace-safety-yellow.jpg":[792,594,51,106,695,378,0],"lace-steel-eyelet.jpg":[792,594,51,97,693,398,0],"sneaker-white.jpg":[895,672,75,94,751,423,0],"sport-lime-thick.jpg":[792,594,51,115,694,358,0],"sport-suede-blue.jpg":[802,602,52,129,701,342,0]};
+ const selector='.product-photo img,.solar-planet img,#productModalImg,.related-photo img';
+ const seen=new WeakSet();
+ function sourceFrame(img){return frames[(img.getAttribute('src')||'').split('/').pop().split('?')[0]];}
+ function layout(img){
+  const f=sourceFrame(img),box=img.parentElement;if(!f||!box.classList.contains('sicura-image-frame'))return;
+  const W=box.clientWidth,H=box.clientHeight;if(!W||!H)return;
+  const [iw,ih,x,y,w,h,angle]=f,r=angle*Math.PI/180,c=Math.cos(r),s=Math.sin(r),cx=x+w/2,cy=y+h/2;
+  const pad=Math.min(W,H)*.045,rw=Math.abs(w*c)+Math.abs(h*s),rh=Math.abs(w*s)+Math.abs(h*c),scale=Math.min((W-2*pad)/rw,(H-2*pad)/rh);
+  img.style.setProperty('--shoe-source-w',iw+'px');img.style.setProperty('--shoe-source-h',ih+'px');
+  img.style.setProperty('--shoe-matrix','matrix('+[scale*c,scale*s,-scale*s,scale*c,W/2-scale*(cx*c-cy*s),H/2-scale*(cx*s+cy*c)].join(',')+')');
+ }
+ const resize=new ResizeObserver(entries=>entries.forEach(e=>{const img=e.target.querySelector('img');if(img)layout(img);}));
+ function prepare(img){
+  if(seen.has(img)){layout(img);return;}if(!sourceFrame(img))return;seen.add(img);
+  const parent=img.parentElement;let frame=parent;
+  if(!parent.classList.contains('sicura-image-frame')){frame=document.createElement('span');frame.className='sicura-image-frame';parent.insertBefore(frame,img);frame.appendChild(img);}
+  resize.observe(frame);img.addEventListener('load',()=>layout(img));layout(img);
+  if(img.id==='productModalImg')parent.addEventListener('mousemove',event=>{const rect=parent.getBoundingClientRect();frame.style.transformOrigin=((event.clientX-rect.left)/rect.width*100)+'% '+((event.clientY-rect.top)/rect.height*100)+'%';});
+ }
+ function scan(node){if(node.nodeType!==1&&node!==document)return;if(node.matches?.(selector))prepare(node);node.querySelectorAll?.(selector).forEach(prepare);}
+ function start(){scan(document);new MutationObserver(records=>{records.forEach(record=>{if(record.type==='attributes')prepare(record.target);else record.addedNodes.forEach(scan);});}).observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['src']});}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+})();
+
+</script>
 </body>
 </html>
 
