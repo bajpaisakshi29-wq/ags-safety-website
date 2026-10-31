@@ -2729,9 +2729,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 @media(prefers-reduced-motion:reduce){.product-modal-zoom .sicura-image-frame{transition:none}}
 
 </style>
+
+<style id="product-white-background">
+.product-photo,.related-photo,.product-modal-media,.product-modal-zoom,.sicura-image-frame{background:#fff!important}
+.sicura-image-frame img{filter:url(#sicura-photo-white)!important}
+.sicura-image-frame img[src*="sneaker-white.jpg"]{filter:none!important}
+</style>
 </head>
 
-<body><script>
+<body><svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden"><defs><filter id="sicura-photo-white" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1" result="r"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1" result="g"/><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1" result="b"/><feBlend in="r" in2="g" mode="darken" result="rg"/><feBlend in="rg" in2="b" mode="darken" result="minimum"/><feComponentTransfer in="minimum" result="maskColour"><feFuncR type="table" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.875 0.75 0.625 0.5 0.375 0.25 0.125 0 0 0 0 0 0 0 0 0 0 0"/></feComponentTransfer><feColorMatrix in="maskColour" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0" result="mask"/><feComposite in="SourceGraphic" in2="mask" operator="in"/></filter></defs></svg><script>
 window.sicuraLoadVideo=function(video){
  if(!video || video.dataset.loaded==='true')return;
  var sources=video.querySelectorAll('source[data-src]'),hasSource=video.hasAttribute('data-src')||sources.length;
@@ -3099,7 +3105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <dl class="card-specs"><div><dt>Upper</dt><dd>Microfiber Suede Upper Material</dd></div><div><dt>Sole</dt><dd>PU Sole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
         <article tabindex="0" role="button" aria-label="View SE 613 details" class="product-card pop-in" data-category="lace" data-model="SE 613" data-name="se 613 lace-up safety shoe textured toe low profile" data-purpose="everyday" data-product="lace-black-thread">
-          <div class="product-photo"><img src="assets/products/lace-black-thread.jpg" alt="SICURA black lace-up safety shoe with textured toe cap" loading="lazy"></div>
+          <div class="product-photo"><img src="assets/products/lace-black-thread.jpg?v=retake-grey-20261031" alt="SICURA black lace-up safety shoe with textured toe cap" loading="lazy"></div>
           <div class="product-model">SE 613</div><div class="product-meta"><span class="product-name">Lace-Up Safety Shoe</span><span class="product-tag">Low-Profile Grip</span></div>
           <dl class="card-specs"><div><dt>Upper</dt><dd>Microfibre with PU top finish</dd></div><div><dt>Sole</dt><dd>PU Sole</dd></div></dl><div class="product-price">Price on request</div>
         </article>
@@ -4885,7 +4891,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         desc: "A lower-profile Chelsea on a solid black outsole rather than the two-tone grey used elsewhere in the line — a cleaner, quieter look with the same slip-on convenience.",
       },
       'lace-black-thread': {
-        img: 'assets/products/lace-black-thread.jpg',
+        img: 'assets/products/lace-black-thread.jpg?v=retake-grey-20261031',
         specs: [{ k: 'Model', v: 'SE 613' }, { k: 'Sole', v: 'PU Sole' }, { k: 'Upper', v: 'Microfibre with PU top finish' }, { k: 'Sizes', v: '39 TO 46' }, { k: 'Colours', v: 'Black' }, { k: 'MOQ', v: '500 pairs' }, { k: 'Standard', v: 'EN ISO 20345:2024' }],
         desc: "A textured, thread-patterned take on the standard black lace-up, with padded comfort built in. Same protection, a bit more detail.",
       },
@@ -5245,7 +5251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script id="product-framing-script">
 (function(){
  'use strict';
- const frames={"boot-black-orange.jpg":[808,523,13,7,794,515,0],"boot-brown-fur.jpg":[787,591,47,68,694,461,0],"boot-canvas-combat.jpg":[518,380,14,7,495,365,0],"boot-chukka-black.jpg":[834,485,20,13,807,469,0],"boot-tactical-hex.jpg":[745,659,8,16,728,630,0],"boot-tall-combat.jpg":[790,598,0,13,769,581,0],"boot-tan-military.jpg":[653,527,11,13,638,499,0],"boot-tan-trim.jpg":[788,591,47,92,695,406,0],"boot-tan-zip.jpg":[741,539,24,11,702,527,0],"boot-zip-ankle.jpg":[768,573,7,0,727,560,0],"chelsea-black-suede.jpg":[777,601,10,10,747,579,0],"chelsea-black.jpg":[799,600,51,40,694,516,0],"chelsea-brown.jpg":[724,534,6,11,713,523,0],"chelsea-red.jpg":[802,602,56,42,695,513,0],"lace-black-orange.jpg":[792,594,51,127,695,344,0],"lace-black-tan.jpg":[792,594,51,127,695,337,0],"lace-black-tansole.jpg":[789,592,49,130,695,337,0],"lace-black-thread.jpg":[790,593,49,130,695,334,0],"lace-black.jpg":[783,588,43,115,694,356,0],"lace-brown.jpg":[792,594,50,124,696,343,0],"lace-safety-yellow.jpg":[750,456,3,27,747,422,0],"lace-steel-eyelet.jpg":[813,448,0,2,813,440,0],"sneaker-white.jpg":[895,672,75,94,751,423,0],"sport-lime-thick.jpg":[856,474,0,15,846,453,0],"sport-suede-blue.jpg":[871,465,0,7,871,449,0]};
+ const frames={"boot-black-orange.jpg":[808,523,13,7,794,515,0],"boot-brown-fur.jpg":[787,591,47,68,694,461,0],"boot-canvas-combat.jpg":[518,380,14,7,495,365,0],"boot-chukka-black.jpg":[834,485,20,13,807,469,0],"boot-tactical-hex.jpg":[745,659,8,16,728,630,0],"boot-tall-combat.jpg":[790,598,0,13,769,581,0],"boot-tan-military.jpg":[653,527,11,13,638,499,0],"boot-tan-trim.jpg":[788,591,47,92,695,406,0],"boot-tan-zip.jpg":[741,539,24,11,702,527,0],"boot-zip-ankle.jpg":[768,573,7,0,727,560,0],"chelsea-black-suede.jpg":[777,601,10,10,747,579,0],"chelsea-black.jpg":[799,600,51,40,694,516,0],"chelsea-brown.jpg":[724,534,6,11,713,523,0],"chelsea-red.jpg":[802,602,56,42,695,513,0],"lace-black-orange.jpg":[792,594,51,127,695,344,0],"lace-black-tan.jpg":[792,594,51,127,695,337,0],"lace-black-tansole.jpg":[789,592,49,130,695,337,0],"lace-black-thread.jpg":[886,476,4,10,878,456,0],"lace-black.jpg":[783,588,43,115,694,356,0],"lace-brown.jpg":[792,594,50,124,696,343,0],"lace-safety-yellow.jpg":[750,456,3,27,747,422,0],"lace-steel-eyelet.jpg":[813,448,0,2,813,440,0],"sneaker-white.jpg":[895,672,75,94,751,423,0],"sport-lime-thick.jpg":[856,474,0,15,846,453,0],"sport-suede-blue.jpg":[871,465,0,7,871,449,0]};
  const selector='.product-photo img,.solar-planet img,#productModalImg,.related-photo img';
  const seen=new WeakSet();
  function sourceFrame(img){return frames[(img.getAttribute('src')||'').split('/').pop().split('?')[0]];}
