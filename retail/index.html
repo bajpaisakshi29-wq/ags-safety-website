@@ -65,10 +65,10 @@ $('#addBag').onclick=()=>{if(!size){$('#sizeError').textContent='Please choose a
 $('#bagButton').onclick=()=>{renderBag();open('bagModal')};$('#keepBrowsing').onclick=close;function orderUrl(items){
  const lines=items.map(x=>{
   const p=products.find(p=>p.code===x.code),v=p.variants[x.vi];
-  return `• ${p.name} (${p.code}) — ${v.name}, EU ${x.size}, ${x.qty} pair(s) × ${money(v.price)}\nPhoto: https://sicura.in/retail/${v.image}`;
+  return `https://sicura.in/retail/${v.image}\nSize: EU ${x.size}\n${p.name} (${p.code}) · ${v.name}\nQuantity: ${x.qty} pair(s) × ${money(v.price)}`;
  });
  const subtotal=items.reduce((sum,x)=>sum+products.find(p=>p.code===x.code).variants[x.vi].price*x.qty,0);
- const message=['Hello SICURA, I’d like to order:',...lines,'','Product subtotal: '+money(subtotal),'Delivery PIN code: [enter your 6-digit PIN code]','Please confirm availability, delivery charges and payment options.'].join('\n');
+ const message=['Hello SICURA, I’d like to order:','',lines.join('\n\n'),'','Product subtotal: '+money(subtotal),'Delivery PIN code: [enter your 6-digit PIN code]','Please confirm availability, delivery charges and payment options.'].join('\n');
  return 'https://wa.me/917572031111?text='+encodeURIComponent(message);
 }
 $('#orderDirect').onclick=()=>{
